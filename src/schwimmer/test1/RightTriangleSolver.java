@@ -2,25 +2,24 @@ package schwimmer.test1;
 
 import java.text.DecimalFormat;
 
+import schwimmer.triangle.RightTriangle;
+
 public class RightTriangleSolver {
 
 	public static void main(String args[]) {
+		
+		RightTriangle tri1 = 
+			new RightTriangle(7,24);
+		System.out.println(tri1.toString());
 
-		double sideA = 7;
-		double sideB = 24;
-		double sideC = Math.sqrt(sideA * sideA + sideB * sideB);
+		RightTriangle tri2 = 
+			new RightTriangle(5,12);
+		System.out.println(tri2.toString());
 
-		double angleA = Math.toDegrees(Math.asin(sideA / sideC));
-		double angleB = 90 - angleA;
-
-		DecimalFormat f = new DecimalFormat(".0000");
-
-		System.out.println("Side A: " + f.format(sideA));
-		System.out.println("Side B: " + f.format(sideB));
-		System.out.println("Side C: " + f.format(sideC));
-
-		System.out.println("Angle A: " + f.format(angleA));
-		System.out.println("Angle B: " + f.format(angleB));
+		RightTriangle tri3 = 
+			new RightTriangle(3,4);
+		System.out.println(tri3.toString());
+		
 
 	}
 }

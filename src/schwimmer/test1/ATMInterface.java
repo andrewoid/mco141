@@ -25,13 +25,23 @@ public class ATMInterface {
 		double endingBalance = startingBalance + deposit - withdraw;
 
 		System.out.println();
-		System.out.println("Transaction Summary");
-		System.out.println("Account Number: " + accountNumber);
-		System.out.println("Starting Balance: " + f.format(startingBalance));
-		System.out.println("Deposit Amount: " + f.format(deposit));
-		System.out.println("Withdraw Amount: " + f.format(withdraw));
-		System.out.println("Ending Balance: " + f.format(endingBalance));
 
+		if (endingBalance < 0) {
+			System.out.println("Insufficient funds");
+		} else {
+			System.out.println("Transaction Summary");
+			System.out.println("Account Number: " + accountNumber);
+			System.out
+					.println("Starting Balance: " + f.format(startingBalance));
+			System.out.println("Deposit Amount: " + f.format(deposit));
+			System.out.println("Withdraw Amount: " + f.format(withdraw));
+			System.out.println("Ending Balance: " + f.format(endingBalance));
+		}
+
+		if (endingBalance == 0) {
+			System.out.println("Need more cash.");
+			System.out.println("Call customer service... 857-8376");
+		}
 	}
 
 }
